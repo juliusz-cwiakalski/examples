@@ -9,6 +9,6 @@ class AccountConfiguration {
   }
 
   AccountFacade inMemoryAccountFacade() {
-    return new AccountFacade(new InMemoryAccountRepository());
+    return accountFacade(new InMemoryAccountRepository());
   }
 }
