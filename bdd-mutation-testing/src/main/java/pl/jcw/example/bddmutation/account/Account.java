@@ -6,7 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.util.UUID;
-
 import lombok.*;
 import pl.jcw.example.bddmutation.account.api.AccountDto;
 
@@ -26,10 +25,10 @@ class Account {
   @GeneratedValue(strategy = jakarta.persistence.GenerationType.UUID)
   @Getter
   private UUID accountId;
+
   private UUID userId;
   private String name;
-  @Getter
-  private BigDecimal balance;
+  @Getter private BigDecimal balance;
 
   AccountDto toDto() {
     return new AccountDto(accountId, userId, name);

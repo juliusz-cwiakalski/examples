@@ -18,17 +18,23 @@ public class AccountFacade {
   }
 
   void withdraw(UUID accountId, BigDecimal amount) {
-    this.accountRepository.findById(accountId).ifPresent(account -> {
-      account.withdraw(amount);
-      this.accountRepository.save(account);
-    });
+    this.accountRepository
+        .findById(accountId)
+        .ifPresent(
+            account -> {
+              account.withdraw(amount);
+              this.accountRepository.save(account);
+            });
   }
 
   void deposit(UUID accountId, BigDecimal amount) {
-    this.accountRepository.findById(accountId).ifPresent(account -> {
-      account.deposit(amount);
-      this.accountRepository.save(account);
-    });
+    this.accountRepository
+        .findById(accountId)
+        .ifPresent(
+            account -> {
+              account.deposit(amount);
+              this.accountRepository.save(account);
+            });
   }
 
   BigDecimal getBalance(UUID accountId) {
